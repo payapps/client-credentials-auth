@@ -8,6 +8,7 @@
   },
   "homepage": "https://github.com/payapps/client-credentials-auth#readme",
   "license": "UNLICENSED",
+  "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
