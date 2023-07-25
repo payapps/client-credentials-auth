@@ -17,10 +17,10 @@ See the `integration.test.ts` for a working example using Axios.
 
 ```
 const clientCredentialsAuth = new ClientCredentialsAuth();
-clientCredentialsAuth.addClient("testclient", {
-    clientId: "testclient",
+clientCredentialsAuth.addClient("test-api", {
+    clientId: "test-api-client-id",
     clientSecret: "not-very-secret",
-    oidcProviderAddress: "http://localhost:5432",
+    oidcProviderAddress: "http://localhost:5123",
     scope: "testscope",
 });
 ```
@@ -29,7 +29,7 @@ clientCredentialsAuth.addClient("testclient", {
 
 ```
 axios.interceptors.request.use(async (config) => {
-    const token = await clientCredentialsAuth.getClientToken(options.clientId);
+    const token = await clientCredentialsAuth.getClientToken("test-api");
     config.headers.Authorization = `bearer ${token}`;
     return config;
 });
@@ -41,7 +41,7 @@ axios.interceptors.request.use(async (config) => {
 axios.interceptors.response.use(undefined, async (error) => {
     const { config, isRetry, response } = error;
     if (!isRetry && response && response.status === 401) {
-        clientCredentialsAuth.clearClientToken(options.clientId);
+        clientCredentialsAuth.clearClientToken("test-api");
         config.isRetry = true;
         return axios(config);
     } else {
