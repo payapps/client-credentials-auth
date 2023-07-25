@@ -3,7 +3,7 @@
 Library for resolving access tokens using the OpenID Connect client credentials flow (OIDC `client_credentials` grant).  Designed to allow easy addition of  `Authorization` header bearer tokens to outgoing API requests, e.g. using an Axios request interceptor.
 
 ![main branch](https://github.com/payapps/client-credentials-auth/actions/workflows/main.yml/badge.svg)
-![coverage](https://github.com/payapps/client-credentials-auth/raw/badges/.badges/main/coverage.svg)
+![coverage](https://raw.githubusercontent.com/payapps/client-credentials-auth/badges/.badges/coverage.svg)
 
 Discovery information and tokens are automatically cached in memory according configuration (discovery) or the token expiry (access tokens), and transparently reloaded as required.  OIDC discovery and token issuance is handled internally by the [`openid-client`](https://www.npmjs.com/package/openid-client) package.
 
@@ -78,3 +78,4 @@ Runs all tests.
 ### `npm run test:coverage`
 
 Runs all tests with coverage.
+
