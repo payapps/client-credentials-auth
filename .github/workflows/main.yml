@@ -17,12 +17,6 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: Ensure badges branch exists
-        uses: action-badges/create-orphan-branch@0.1.0
-        # if: github.event_name != 'pull_request'
-        with:
-          branch-name: badges
-
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
