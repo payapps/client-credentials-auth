@@ -78,3 +78,4 @@ Runs all tests.
 ### `npm run test:coverage`
 
 Runs all tests with coverage.
+
