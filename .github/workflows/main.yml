@@ -17,6 +17,12 @@ jobs:
         with:
           fetch-depth: 0
       
+      - name: Ensure badges branch exists
+        uses: action-badges/create-orphan-branch@0.1.0
+        # if: github.event_name != 'pull_request'
+        with:
+          branch-name: badges
+
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -44,12 +50,6 @@ jobs:
           name: code-coverage-report
           path: ./coverage/lcov-report
           
-      - name: Ensure badges branch exists
-        uses: action-badges/create-orphan-branch@0.1.0
-        # if: github.event_name != 'pull_request'
-        with:
-          branch-name: badges
-
       - name: Write coverage badge
         uses: action-badges/cobertura-coverage-xml-badges@main
         # if: github.event_name != 'pull_request'
