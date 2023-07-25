@@ -4,6 +4,7 @@ Library for resolving access tokens using the OpenID Connect client credentials 
 
 ![main branch](https://github.com/payapps/client-credentials-auth/actions/workflows/main.yml/badge.svg)
 ![coverage](https://raw.githubusercontent.com/payapps/client-credentials-auth/badges/.badges/coverage.svg)
+
 Discovery information and tokens are automatically cached in memory according configuration (discovery) or the token expiry (access tokens), and transparently reloaded as required.  OIDC discovery and token issuance is handled internally by the [`openid-client`](https://www.npmjs.com/package/openid-client) package.
 
 Client credentials can be pre-configured (using ```.addClient('clientname', options)```), or resolved at runtime using a credentials store callback.  Runtime resolution allows easy async resolution of client secrets from a secret store, or environment variables.
