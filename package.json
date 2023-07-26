@@ -1,6 +1,6 @@
 {
   "name": "@payapps/client-credentials-auth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "OIDC client credentials flow authentication",
   "repository": {
     "type": "git",
@@ -8,8 +8,8 @@
   },
   "homepage": "https://github.com/payapps/client-credentials-auth#readme",
   "license": "UNLICENSED",
-  "private": false,
   "main": "dist/index.js",
+  "private": false,
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
